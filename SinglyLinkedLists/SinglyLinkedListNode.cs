@@ -50,6 +50,11 @@ namespace SinglyLinkedLists
             allNodes.Add(this);
         }
 
+        public override string ToString()
+        {
+            return value;
+        }
+
         // READ: http://msdn.microsoft.com/en-us/library/system.icomparable.compareto.aspx
         public int CompareTo(Object obj)
         {
