@@ -17,7 +17,12 @@ namespace SinglyLinkedLists
         {
        
             get { return next; }
-            set {next = value; } 
+            set {
+                if (value == this)
+                {
+                    throw new ArgumentException();
+                }
+                next = value; } 
         }
     
         private string value;
