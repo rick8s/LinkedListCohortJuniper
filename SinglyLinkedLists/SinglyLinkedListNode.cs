@@ -63,7 +63,21 @@ namespace SinglyLinkedLists
 
         public bool IsLast()
         {
-            throw new NotImplementedException();
+            if (this.Next == null)
+            {
+                 return true;
+            }
+            return false;
+        }
+
+        public override bool Equals(Object obj)
+        {
+            SinglyLinkedListNode nodeObj = obj as SinglyLinkedListNode;
+            if (nodeObj.value == this.value)
+            {
+                return this.value.Equals(nodeObj.value);
+            }
+            return false;
         }
     }
 }
