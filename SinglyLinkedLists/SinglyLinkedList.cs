@@ -45,7 +45,7 @@ namespace SinglyLinkedLists
             {
                 first = new SinglyLinkedListNode(value);
             }
-            last = new SinglyLinkedListNode(value);//actually attach new nodes to end of the list
+            last = new SinglyLinkedListNode(value);
         }
             
 

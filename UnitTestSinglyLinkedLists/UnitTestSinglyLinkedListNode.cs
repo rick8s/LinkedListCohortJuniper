@@ -57,6 +57,14 @@ namespace UnitTestSinglyLinkedLists
 
         }
 
+        [TestMethod]
+        public void NodeEqualityWithSelf()
+        {
+            SinglyLinkedListNode node = new SinglyLinkedListNode("foo");
+            Assert.AreEqual(node, node); ;
+
+        }
+
         // READ: http://msdn.microsoft.com/en-us/library/bsc2ak47.aspx
         [TestMethod]
         public void NodeEqualityWithEqualValues()
@@ -88,6 +96,7 @@ namespace UnitTestSinglyLinkedLists
             SinglyLinkedListNode node2 = new SinglyLinkedListNode("foo");
             node2.Next = new SinglyLinkedListNode("sally");
             Assert.AreEqual(node1, node2);
+            Assert.AreNotEqual(node1.Next, node2.Next);
         }
 
         [TestMethod]
