@@ -9,6 +9,7 @@ namespace SinglyLinkedLists
     {
         private SinglyLinkedListNode first;
         private SinglyLinkedListNode last;
+        private SinglyLinkedListNode count;
         
 
         public SinglyLinkedList()
@@ -41,11 +42,22 @@ namespace SinglyLinkedLists
 
         public void AddLast(string value)
         {
-            if(first == null)
+            if (first == null)
             {
                 first = new SinglyLinkedListNode(value);
+                return;
             }
-            last = new SinglyLinkedListNode(value);
+           SinglyLinkedListNode newNode = this.first;
+            while (true)
+            {
+                if (newNode.Next == null)
+               {
+                     newNode.Next = new SinglyLinkedListNode(value);
+                     break;
+                 }
+                 newNode = newNode.Next;
+             } 
+            
         }
             
 
@@ -57,7 +69,18 @@ namespace SinglyLinkedLists
 
         public string ElementAt(int index)
         {
-            throw new NotImplementedException();
+            SinglyLinkedListNode newNode = this.first;
+            if (newNode == null)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            
+               for (int i = 0; i < index; i++)
+                {
+                   newNode = newNode.Next;
+                }
+                return newNode.Value;
+            
         }
 
         public string First()
