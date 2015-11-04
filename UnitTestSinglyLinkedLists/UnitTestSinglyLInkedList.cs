@@ -484,6 +484,7 @@ namespace UnitTestSinglyLinkedLists
             CollectionAssert.AreEqual(expected, list.ToArray());
         }
 
+        
         [TestMethod]
         public void SortListWithDuplicates()
         {
